@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Mon Apr  3 14:20:17 2017 Nicolas
+** Last update Mon Apr  3 18:23:57 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -40,6 +40,9 @@ char	*my_strdup_gnl(char *src);
 char	*my_strdup(char *src);
 char	*my_strcpy(char *dest, char *src);
 char	*change_path(char *env);
+char	**builtin_env(char *buff, char **env);
+char	**my_setenv(char **env, char *buff);
+char	**my_unsetenv(char **env, char *buff);
 char	**find_env(char **env, char *buff);
 char	**get_new_path(char **env, char *buff);
 char	**my_str_to_wordtab(char *str, char c);
