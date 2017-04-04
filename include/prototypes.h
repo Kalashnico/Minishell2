@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Mon Apr  3 23:44:41 2017 Nicolas
+** Last update Tue Apr  4 05:20:36 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -33,7 +33,10 @@ int	check_n(char *str);
 int	my_execve(char **av, char **env);
 int	check_if_built_exist(char *buff);
 int	builtin(char *buff, char **env);
+int	find_if_exist(char *cmd);
 int	my_memcmp(void *s1, void *s2, size_t n);
+int	my_execve_brut(char *path, char **av, char **env);
+char	*find_good_cmd(char **path);
 char	*epur_str(char *str);
 char	*my_realloc(char *buff, int nb);
 char	*boucle_gnl(char *line, char *buff, int ret, int i);

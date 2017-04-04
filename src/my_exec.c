@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 17:05:58 2017 Nicolas
-** Last update Tue Apr  4 02:40:31 2017 Nicolas
+** Last update Tue Apr  4 04:14:23 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -55,7 +55,8 @@ char	**get_new_path(char **env, char *buff)
   x = 0;
   i = check_path(env);
   env_rt = change_path(env[i]);
-  tab = my_str_to_wordtab(env_rt, ':');
+  if ((tab = my_str_to_wordtab(env_rt, ':')) == NULL)
+    return (NULL);
   while (tab && tab[x])
     {
       if ((tab[x] = my_realloc(tab[x], my_strlen(buff) + 2)) == NULL)
@@ -75,7 +76,8 @@ char	*find_good_cmd(char **path)
   i = 0;
   while (path && path[i])
     {
-      cmd = my_strdup(path[i]);
+      if ((cmd = my_strdup(path[i])) == NULL)
+	return (NULL);
       if ((access(cmd, F_OK)) != -1)
 	return (cmd);
       i++;

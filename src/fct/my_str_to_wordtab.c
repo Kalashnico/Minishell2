@@ -6,7 +6,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Thu Jan 26 17:17:46 2017 Nicolas Guerin
-** Last update Mon Apr  3 20:44:54 2017 Nicolas
+** Last update Tue Apr  4 04:20:47 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -63,6 +63,9 @@ char	**my_str_to_wordtab(char *str, char c)
 
   i = 0;
   n = 0;
+  /* if (str != NULL) */
+  /*   if ((str = epur_str(str)) == NULL) */
+  /*     return (NULL); */
   if ((tab = malloc(sizeof(char *) * (size_tab(str, c) + 2))) == NULL)
     return (NULL);
   while (str && str[i] != '\0')
