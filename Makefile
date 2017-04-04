@@ -5,7 +5,7 @@
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
 ## Started on  Sun Apr  2 06:15:28 2017 Nicolas
-## Last update Mon Apr  3 18:23:36 2017 Nicolas
+## Last update Mon Apr  3 23:15:18 2017 Nicolas
 ##
 
 NAME	= mysh
@@ -19,6 +19,7 @@ SRCS	= ./src/builtin/my_cd.c		\
 	  ./src/builtin/builtin.c	\
 	  ./src/builtin/my_setenv.c	\
 	  ./src/builtin/my_unsetenv.c	\
+	  ./src/fct/my_strncmp.c	\
 	  ./src/fct/my_memcmp.c		\
 	  ./src/fct/get_next_line.c	\
 	  ./src/fct/my_putchar.c	\
@@ -30,6 +31,7 @@ SRCS	= ./src/builtin/my_cd.c		\
 	  ./src/fct/my_strdup.c		\
 	  ./src/fct/my_strlen.c		\
 	  ./src/fct/show_tab.c		\
+	  ./src/fct/epur_str.c		\
 	  ./src/my_exec.c		\
 	  ./src/main.c
 

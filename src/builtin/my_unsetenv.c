@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Mon Apr  3 17:46:40 2017 Nicolas
-** Last update Mon Apr  3 18:23:16 2017 Nicolas
+** Last update Mon Apr  3 21:39:25 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -37,5 +37,6 @@ char	**my_unsetenv(char **env, char *buff)
       env[i] = env[i + 1];
       i++;
     }
+  free(env[i]);
   return (env);
 }

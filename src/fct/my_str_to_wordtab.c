@@ -1,3 +1,4 @@
+
 /*
 ** my_str_to_wordtab.c for my_str_to_wordtab in /home/guerin_n
 ** 
@@ -5,7 +6,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Thu Jan 26 17:17:46 2017 Nicolas Guerin
-** Last update Sun Apr  2 19:00:39 2017 Nicolas
+** Last update Mon Apr  3 20:44:54 2017 Nicolas
 */
 
 #include "prototypes.h"
