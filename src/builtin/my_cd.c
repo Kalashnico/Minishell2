@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Tue Apr  4 23:54:39 2017 Nicolas
+** Last update Tue Apr  4 23:55:44 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -49,7 +49,7 @@ char	**my_cd(char **env, char *cmd)
       if ((chdir(cmd)) == -1)
 	return (my_putstr("Access denied : ", 2), NULL);
     }  
-  if (chdir(tab[1]) == -1)
+  else if (chdir(tab[1]) == -1)
     return (my_putstr("Access defied : ", 2), NULL);
   return (env);
 }
