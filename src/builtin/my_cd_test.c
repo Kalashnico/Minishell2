@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 01:59:43 2017 Nicolas
-** Last update Tue Apr  4 23:43:22 2017 Nicolas
+** Last update Wed Apr  5 01:22:40 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -22,7 +22,7 @@ int	check_home(char **env)
 	return (i);
       i++;
     }
-  return (84);  
+  return (84);
 }
 
 int	check_pwd(char **env)
@@ -40,30 +40,18 @@ int	check_pwd(char **env)
   return (84);
 }
 
-char	*my_cd_home(char **env)
-{
-  char	*new_path;
-  int	i;
-
-  if ((i = check_home(env)) == 84 ||
-      (new_path = change_path(env[i])) == NULL)
-    return (NULL);
-  return (new_path);
-}
-
 char	*my_cd_oldpath(char **env)
 {
   char	*new_path;
   int	i;
 
-  
   if ((i = check_pwd(env)) == 84 ||
       (new_path = change_path_cd(env[i])) == NULL)
     return (NULL);
   return (new_path);
 }
- 
-char    *change_path_cd(char *env)
+
+char	*change_path_cd(char *env)
 {
   char  *new_env;
   int   i;
@@ -94,7 +82,8 @@ char	**my_cd(char **env, char *cmd)
 
   if ((tab = my_str_to_wordtab(cmd, ' ')) == NULL ||
       (i = check_pwd(env)) == 84 ||
-      (path = malloc(sizeof(char) * my_strlen(tab[1]) + my_strlen(env[i]))) == NULL ||
+      (path = malloc(sizeof(char) *
+		     my_strlen(tab[1]) + my_strlen(env[i]))) == NULL ||
       (old_path = malloc(sizeof(char) * (my_strlen(env[i] + 15)))) == NULL)
     return (NULL);
   temp = change_path_cd(env[i]);
@@ -114,7 +103,7 @@ char	**my_cd(char **env, char *cmd)
     return (my_putstr("Access denied : ", 2), NULL);
   if ((new_path = malloc(sizeof(char) * (my_strlen(path) + 12))) == NULL ||
       (env = my_unsetenv(env, "OLDPWD")) == NULL)
-    return (NULL); 
+    return (NULL);
   my_strcat(new_path, "setenv PWD ");
   my_strcat(new_path, path);
   if ((env = my_setenv(env, new_path)) == NULL ||

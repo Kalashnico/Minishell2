@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Wed Feb  1 16:51:58 2017 Nicolas Guerin
-** Last update Wed Feb  1 16:53:08 2017 Nicolas Guerin
+** Last update Wed Apr  5 01:08:32 2017 Nicolas
 */
 
 #ifndef GET_NEXT_LINE_H_
@@ -13,6 +13,10 @@
 
 #ifndef READ_SIZE
 # define READ_SIZE 1028
+
+#include <unistd.h>
+#include <stdlib.h>
+
 #endif /* !READ_SIZE */
 
 #endif /* !GET_NEXT_LINE_H_ */

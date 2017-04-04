@@ -5,12 +5,12 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Tue Apr  4 23:55:44 2017 Nicolas
+** Last update Wed Apr  5 01:22:48 2017 Nicolas
 */
 
 #include "prototypes.h"
 
-int     check_home(char **env)
+int	check_home(char **env)
 {
   int   i;
 
@@ -48,7 +48,7 @@ char	**my_cd(char **env, char *cmd)
 	return (NULL);
       if ((chdir(cmd)) == -1)
 	return (my_putstr("Access denied : ", 2), NULL);
-    }  
+    }
   else if (chdir(tab[1]) == -1)
     return (my_putstr("Access defied : ", 2), NULL);
   return (env);

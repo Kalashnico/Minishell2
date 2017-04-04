@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 17:05:58 2017 Nicolas
-** Last update Tue Apr  4 19:11:39 2017 Nicolas
+** Last update Wed Apr  5 01:38:36 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -83,13 +83,6 @@ char	*find_good_cmd(char **path)
       i++;
     }
   return (NULL);
-}
-
-int	find_if_exist(char *cmd)
-{
-  if ((access(cmd, F_OK)) != -1)
-    return (0);
-  return (84);
 }
 
 int	my_execve(char **av, char **env)

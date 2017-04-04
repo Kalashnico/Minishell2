@@ -5,59 +5,10 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Tue Apr  4 07:00:44 2017 Nicolas
+** Last update Wed Apr  5 01:20:11 2017 Nicolas
 */
 
 #include "prototypes.h"
-
-void	free_tab(char **tab)
-{
-  int	i;
-
-  i = 0;
-  while (tab && tab[i])
-    free(tab[i++]);
-  free(tab[i]);
-}
-
-void	get_sigseg(int sigint)
-{
-  (void)sigint;
-  my_putstr("\nSegfault.. Learn how to code. :)\n", 2);
-  my_putstr("$>", 0);
-}
-
-void	get_sigint(int sigint)
-{
-  (void)sigint;
-  my_putstr("\n$>", 0);
-}
-
-void		signal_process()
-{
-  if (signal(SIGINT, &get_sigint)== SIG_ERR)
-    my_putstr("ERROR_SIGNAL\n", 2);
-  /* if (signal(SIGSEGV, get_sigseg) == SIG_ERR) */
-  /*   my_putstr("ERROR_SIGNAL\n", 2); */
-}
-
-int	count_word(char *str)
-{
-  int	i;
-  int	res;
-
-  if (str)
-    return (0);
-  i = 0;
-  res = 1;
-  while (str[i])
-    {
-      if (str[i] == 32)
-	res++;
-      i++;
-    }
-  return (res);
-}
 
 int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 {

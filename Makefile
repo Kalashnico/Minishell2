@@ -1,27 +1,31 @@
 ##
-## Makefile for makefile in /home/nicolas/Epitech/Shell/PSU_2016_minishell1
+## Makefile for makefile in /home/nicolas/Epitech/Shell/PSU_2016_minishell2
 ## 
 ## Made by Nicolas
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
-## Started on  Sun Apr  2 06:15:28 2017 Nicolas
-## Last update Tue Apr  4 18:14:00 2017 Nicolas
+## Started on  Wed Apr  5 01:04:14 2017 Nicolas
+## Last update Wed Apr  5 01:19:09 2017 Nicolas
 ##
 
-NAME	= mysh
+NAME	= my_sh
 
-CC	= gcc -g
+CC	= gcc
 
 RM	= rm -f
 
-SRCS	= ./src/builtin/my_cd.c		\
+SRCS	= ./src/builtin/builtin.c	\
+	  ./src/builtin/my_cd.c		\
 	  ./src/builtin/my_env.c	\
-	  ./src/builtin/builtin.c	\
 	  ./src/builtin/my_setenv.c	\
 	  ./src/builtin/my_unsetenv.c	\
-	  ./src/fct/my_strncmp.c	\
-	  ./src/fct/my_memcmp.c		\
+	  ./src/execve/find_if_exist.c	\
+	  ./src/execve/my_exec.c	\
+	  ./src/execve/my_exec_brut.c	\
+	  ./src/fct/count_word.c	\
+	  ./src/fct/free_tab.c		\
 	  ./src/fct/get_next_line.c	\
+	  ./src/fct/my_memcmp.c		\
 	  ./src/fct/my_putchar.c	\
 	  ./src/fct/my_putstr.c		\
 	  ./src/fct/my_realloc.c	\
@@ -30,17 +34,18 @@ SRCS	= ./src/builtin/my_cd.c		\
 	  ./src/fct/my_strcpy.c		\
 	  ./src/fct/my_strdup.c		\
 	  ./src/fct/my_strlen.c		\
+	  ./src/fct/my_strlen_tab.c	\
+	  ./src/fct/my_strncmp.c	\
 	  ./src/fct/show_tab.c		\
-	  ./src/my_exec_brut.c		\
-	  ./src/my_exec.c		\
-	  ./src/main.c
+	  ./src/main.c			\
+	  ./src/signal/get_sigint.c	\
+	  ./src/signal/get_sigseg.c	\
+	  ./src/signal/signal_process.c 
 
 OBJS	= $(SRCS:.c=.o)
 
 CFLAGS = -I ./include/
 CFLAGS += -W -Wall -Wextra
-
-LDFLAGS=
 
 all: $(NAME)
 
@@ -54,8 +59,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-%.o:	%.c
-	$(CC) -o $@ -c $< $(CFLAGS)
 
 .PHONY: all clean fclean re

@@ -5,11 +5,25 @@
 ** Login   <guerin_n@epitech.net>
 **
 ** Started on  Sun Jan 15 21:24:05 2017 Nicolas Guerin
-** Last update Mon Feb 27 13:52:19 2017 Nicolas Guerin
+** Last update Wed Apr  5 01:44:15 2017 Nicolas
 */
 
 #include "prototypes.h"
 #include "get_next_line.h"
+
+int	check_n(char *str)
+{
+  int	i;
+
+  i = 0;
+  while (str && str[i])
+    {
+      if (str[i] == '\n')
+	return (i);
+      i++;
+    }
+  return (-1);
+}
 
 char	*my_strdup_gnl(char *src)
 {
@@ -29,20 +43,6 @@ char	*my_strdup_gnl(char *src)
     }
   str[i] = '\0';
   return (str);
-}
-
-int	check_n(char *str)
-{
-  int	i;
-
-  i = 0;
-  while (str && str[i])
-    {
-      if (str[i] == '\n')
-	return (i);
-      i++;
-    }
-  return (-1);
 }
 
 char	*boucle_gnl(char *line, char *buff, int ret, int i)
