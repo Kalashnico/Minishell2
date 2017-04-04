@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Tue Apr  4 05:20:36 2017 Nicolas
+** Last update Tue Apr  4 23:09:34 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -17,6 +17,7 @@
 #include <signal.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <string.h>
 
 void	my_putchar(char c, int fd);
 void	my_putstr(char *str, int fd);
@@ -27,7 +28,6 @@ int	my_strlen(char *str);
 int	my_strncmp(char *s1, char *s2, int n);
 int	check_path(char **av);
 int	my_env(char **env);
-int	my_cd(char *path);
 int	show_tab(char **tab);
 int	check_n(char *str);
 int	my_execve(char **av, char **env);
@@ -36,6 +36,8 @@ int	builtin(char *buff, char **env);
 int	find_if_exist(char *cmd);
 int	my_memcmp(void *s1, void *s2, size_t n);
 int	my_execve_brut(char *path, char **av, char **env);
+int	count_word(char *buff);
+char	*change_path_cd(char *env);
 char	*find_good_cmd(char **path);
 char	*epur_str(char *str);
 char	*my_realloc(char *buff, int nb);
@@ -46,6 +48,8 @@ char	*my_strdup_gnl(char *src);
 char	*my_strdup(char *src);
 char	*my_strcpy(char *dest, char *src);
 char	*change_path(char *env);
+char	**overwrite_setenv(char **env, char **tab, int i);
+char	**my_cd(char **env, char *cmd);
 char	**builtin_env(char *buff, char **env);
 char	**my_setenv(char **env, char *buff);
 char	**my_unsetenv(char **env, char *buff);

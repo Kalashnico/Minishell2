@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Mon Apr  3 15:28:46 2017 Nicolas
-** Last update Tue Apr  4 06:59:21 2017 Nicolas
+** Last update Tue Apr  4 23:38:56 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -55,8 +55,8 @@ int	check_value_exist_env(char **env, char *buff)
 
 char	**overwrite_setenv(char **env, char **tab, int i)
 {
-  if ((memset(env[i], '\0', my_strlen(env[i]))) == NULL ||
-      (env[i] = my_realloc(env[i], my_strlen(tab[1]) + 2)) == NULL)
+  if ((memset(env[i], '\0', my_strlen(env[i]) + 1)) == NULL ||
+      (env[i] = my_realloc(env[i], my_strlen(tab[1]) + my_strlen(tab[2]) + 2)) == NULL)
     return (NULL);
   my_strcpy(env[i], tab[1]);
   my_strcat(env[i], "=");

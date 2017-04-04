@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 18:35:03 2017 Nicolas
-** Last update Tue Apr  4 06:24:33 2017 Nicolas
+** Last update Tue Apr  4 21:20:06 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -22,9 +22,6 @@ int	check_if_built_exist(char *buff)
 
 int	builtin(char *buff, char **env)
 {
-  if (my_memcmp("cd ", buff, 3) == 0)
-    if (my_cd(buff) == 84)
-      return (84);
   if (my_memcmp("env", buff, 4) == 0)
     if (my_env(env) == 84)
       return (84);
@@ -33,6 +30,9 @@ int	builtin(char *buff, char **env)
 
 char	**builtin_env(char *buff, char **env)
 {
+  if (my_memcmp("cd ", buff, 3) == 0)
+    if (my_cd(env, buff) == NULL)
+      return (NULL);
   if (my_memcmp("setenv", buff, 6) == 0)
     if ((env = my_setenv(env, buff)) == NULL)
       return (NULL);

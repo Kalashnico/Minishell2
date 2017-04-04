@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 17:05:58 2017 Nicolas
-** Last update Tue Apr  4 07:52:41 2017 Nicolas
+** Last update Tue Apr  4 19:11:39 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -22,7 +22,7 @@ int	check_path(char **env)
 	return (i);
       i++;
     }
-  return (i);
+  return (84);
 }
 
 char	*change_path(char *env)
@@ -53,9 +53,9 @@ char	**get_new_path(char **env, char *buff)
   int	x;
 
   x = 0;
-  i = check_path(env);
-  env_rt = change_path(env[i]);
-  if ((tab = my_str_to_wordtab(env_rt, ':')) == NULL)
+  if ((i = check_path(env)) == 84 ||
+      (env_rt = change_path(env[i])) == NULL ||
+      (tab = my_str_to_wordtab(env_rt, ':')) == NULL)
     return (NULL);
   while (tab && tab[x])
     {
