@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 18:35:03 2017 Nicolas
-** Last update Mon Apr  3 18:23:14 2017 Nicolas
+** Last update Tue Apr  4 06:24:33 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -33,10 +33,10 @@ int	builtin(char *buff, char **env)
 
 char	**builtin_env(char *buff, char **env)
 {
-  if (my_memcmp("setenv ", buff, 7) == 0)
+  if (my_memcmp("setenv", buff, 6) == 0)
     if ((env = my_setenv(env, buff)) == NULL)
       return (NULL);
-  if (my_memcmp("unsetenv ", buff, 9) == 0)
+  if (my_memcmp("unsetenv", buff, 8) == 0)
     if ((env = my_unsetenv(env, buff)) == NULL)
       return (NULL);
   return (env);

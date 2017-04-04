@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Tue Apr  4 05:29:00 2017 Nicolas
+** Last update Tue Apr  4 07:00:44 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -13,7 +13,7 @@
 void	free_tab(char **tab)
 {
   int	i;
-  
+
   i = 0;
   while (tab && tab[i])
     free(tab[i++]);
@@ -45,7 +45,7 @@ int	count_word(char *str)
 {
   int	i;
   int	res;
-  
+
   if (str)
     return (0);
   i = 0;
@@ -56,7 +56,7 @@ int	count_word(char *str)
 	res++;
       i++;
     }
-  return (res);  
+  return (res);
 }
 
 int	main(int ac,__attribute__ ((unused)) char **av, char **env)

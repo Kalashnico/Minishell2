@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Mon Apr  3 15:28:46 2017 Nicolas
-** Last update Mon Apr  3 18:35:39 2017 Nicolas
+** Last update Tue Apr  4 06:59:21 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -39,6 +39,31 @@ char	**env_tab(char **env)
   return (tab);
 }
 
+int	check_value_exist_env(char **env, char *buff)
+{
+  int	i;
+
+  i = 0;
+  while (env && env[i])
+    {
+      if ((my_memcmp(buff, env[i], my_strlen(buff))) == 0)
+	return (i);
+      i++;
+    }
+  return (0);
+}
+
+char	**overwrite_setenv(char **env, char **tab, int i)
+{
+  if ((memset(env[i], '\0', my_strlen(env[i]))) == NULL ||
+      (env[i] = my_realloc(env[i], my_strlen(tab[1]) + 2)) == NULL)
+    return (NULL);
+  my_strcpy(env[i], tab[1]);
+  my_strcat(env[i], "=");
+  my_strcat(env[i], tab[2]);
+  return (env);
+}
+
 char	**my_setenv(char **env, char *buff)
 {
   int	i;
@@ -48,9 +73,15 @@ char	**my_setenv(char **env, char *buff)
 
   if ((tab = my_str_to_wordtab(buff, ' ')) == NULL)
     return (NULL);
+  if (tab[1] == NULL)
+    return (my_env(env), env);
+  if ((i = check_value_exist_env(env, tab[1])) != 0)
+    return (overwrite_setenv(env, tab, i));
   i = my_strlen_tab(env);
   if ((new_tab = env_tab(env)) == NULL ||
-      (new_str = malloc(sizeof(char) * (my_strlen(tab[1]) + my_strlen(tab[2]) + 3))) == NULL)
+      (new_str =
+       malloc(sizeof(char) * (my_strlen(tab[1]) + my_strlen(tab[2]) + 3)))
+      == NULL)
     return (NULL);
   my_strcpy(new_str, tab[1]);
   my_strcat(new_str, "=");
