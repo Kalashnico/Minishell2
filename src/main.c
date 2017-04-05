@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Wed Apr  5 01:20:11 2017 Nicolas
+** Last update Wed Apr  5 02:34:03 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -21,7 +21,7 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
   signal_process();
   while ((buff = get_next_line(0)) != NULL)
     {
-      if (//(buff = epur_str(buff)) == NULL ||
+      if ((buff = epur_str(buff)) == NULL ||
 	  (new_av = my_str_to_wordtab(buff, ' ')) == NULL ||
 	  (my_memcmp("exit", buff, 4) == 0))
 	return (0);
