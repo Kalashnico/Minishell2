@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 03:30:42 2017 Nicolas
-** Last update Wed Apr  5 23:39:06 2017 Nicolas
+** Last update Thu Apr  6 00:38:06 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -55,8 +55,9 @@ char	*get_pwd(char *str)
   int	j;
   char	*new_str;
 
-  i = 4;
+  //i = 4;
   j = 0;
+  i = find_pos_equal(str);
   if ((new_str = malloc(sizeof(char) * my_strlen(str) + 1)) == NULL)
     return (NULL);
   while (str && str[i])

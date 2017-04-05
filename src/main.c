@@ -6,7 +6,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Wed Apr  5 23:36:54 2017 Nicolas
+** Last update Thu Apr  6 00:28:47 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -15,16 +15,18 @@ void	prompt()
 {
   my_putstr("$>", 0);
 }
-  
+
 int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 {
   char	*buff;
   char	**new_av;
+  int	ret;
 
   if (ac != 1)
     return (my_putstr("Too many arguments !\n", 2), 84);
   prompt();
   signal_process();
+  ret = 0;
   while ((buff = get_next_line(0)) != NULL)
     {
       if ((buff = epur_str(buff)) == NULL ||
@@ -41,7 +43,10 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 	{
 	  if ((builtin(buff, env)) == 84 ||
 	      (env = builtin_env(buff, env)) == NULL)
-	    my_putstr("Error in the execution of the command\n", 2);
+	    {
+	      my_putstr("Error in the execution of the command\n", 2);
+	      ret = 1;
+	    }
 	}
       else
 	{
@@ -50,11 +55,12 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 	      {
 		my_putstr(new_av[0], 2);
 		my_putstr(": Command not found.\n", 2);
+		ret = 1;
 	      }
 	}
-      free_tab(new_av);
+      free(new_av);
       free(buff);
       prompt();
     }
-  return (0);
+  return (ret);
 }
