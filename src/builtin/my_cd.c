@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Wed Apr  5 08:47:33 2017 Nicolas
+** Last update Wed Apr  5 20:20:08 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -89,16 +89,16 @@ char	**my_cd(char **env, char *cmd)
       if ((cmd = my_cd_home(env)) == NULL)
 	return (NULL);
       if ((chdir(cmd)) == -1)
-	return (my_putstr("Access denied : ", 2, RED), env);
+	return (my_putstr("Access denied : ", 2), env);
     }
   else if ((my_memcmp(tab[1], "-", 1) == 0))
     {
       i = find_oldpwd(env);
       if ((chdir(cd_oldpwd(env))) == -1)
-	return (my_putstr("Access denied : ", 2, RED), env);
+	return (my_putstr("Access denied : ", 2), env);
     }
   else if (chdir(tab[1]) == -1)
-    return (my_putstr("Access denied !\n", 2, RED), env);
+    return (my_putstr("Access denied !\n", 2), env);
   if ((env = my_setenv(env, get_old_pwd(env[i]))) == NULL ||
       (env = change_pwd(env, tab[1])) == NULL)
     return (NULL);

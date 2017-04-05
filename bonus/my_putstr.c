@@ -5,16 +5,16 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:49:24 2017 Nicolas Guerin
-** Last update Wed Apr  5 20:20:54 2017 Nicolas
+** Last update Wed Apr  5 03:49:13 2017 Nicolas
 */
 
 #include "prototypes.h"
 
-void	my_putstr(char *str, int fd)
+void	my_putstr(char *str, int fd, char *color)
 {
   int	n;
 
   n = 0;
   while (str && str[n])
-    my_putchar(str[n++], fd);
+    my_putchar(str[n++], fd, color);
 }

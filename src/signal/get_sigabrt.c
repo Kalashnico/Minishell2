@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 02:45:26 2017 Nicolas
-** Last update Wed Apr  5 04:06:19 2017 Nicolas
+** Last update Wed Apr  5 20:21:30 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -13,6 +13,6 @@
 void	get_sigabrt(int sigint)
 {
   (void)sigint;
-  my_putstr("\nCore dumped.. Learn how to code!\n", 2, RED);
+  my_putstr("\nCore dumped.. Learn how to code!\n", 2);
   prompt();
 }

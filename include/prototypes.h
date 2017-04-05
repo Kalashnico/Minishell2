@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Wed Apr  5 08:37:06 2017 Nicolas
+** Last update Wed Apr  5 20:22:02 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -32,8 +32,8 @@ void	init_shell();
 
 /* ---  FCT --- */
 
-void	my_putchar(char c, int fd, char *color);
-void	my_putstr(char *str, int fd, char *color);
+void	my_putchar(char c, int fd);
+void	my_putstr(char *str, int fd);
 void	free_tab(char **av);
 void	my_memset(void *s, int f, int n);
 void	my_strcat(char *dest, char *src);
