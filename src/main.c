@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Wed Apr  5 04:31:08 2017 Nicolas
+** Last update Wed Apr  5 09:54:16 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -17,7 +17,7 @@ void	prompt()
 
 void	my_exit()
 {
-  my_putstr("Goodbye, I hope you enjoyed staying with us!\n", 0, GREEN);
+  my_putstr("Goodbye Kalashnico, I hope you enjoyed staying with us!\n", 0, GREEN);
 }
 
 void	init_shell()
@@ -66,7 +66,5 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
       free(buff);
       prompt();
     }
-  if (buff == NULL)
-    return (84);
   return (0);
 }

@@ -5,12 +5,12 @@
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
 ## Started on  Wed Apr  5 01:04:14 2017 Nicolas
-## Last update Wed Apr  5 03:19:50 2017 Nicolas
+## Last update Wed Apr  5 08:02:42 2017 Nicolas
 ##
 
 NAME	= mysh
 
-CC	= gcc
+CC	= gcc -g
 
 RM	= rm -f
 
@@ -19,6 +19,7 @@ SRCS	= ./src/builtin/builtin.c	\
 	  ./src/builtin/my_env.c	\
 	  ./src/builtin/my_setenv.c	\
 	  ./src/builtin/my_unsetenv.c	\
+	  ./src/builtin/my_pwd.c	\
 	  ./src/execve/find_if_exist.c	\
 	  ./src/execve/my_exec.c	\
 	  ./src/execve/my_exec_brut.c	\

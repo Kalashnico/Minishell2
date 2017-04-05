@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Wed Apr  5 04:31:19 2017 Nicolas
+** Last update Wed Apr  5 08:37:06 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -34,9 +34,9 @@ void	init_shell();
 
 void	my_putchar(char c, int fd, char *color);
 void	my_putstr(char *str, int fd, char *color);
-void	my_strcat(char *s1, char *s2);
 void	free_tab(char **av);
 void	my_memset(void *s, int f, int n);
+void	my_strcat(char *dest, char *src);
 int	my_strlen(char *str);
 int	my_strncmp(char *s1, char *s2, int n);
 int	my_memcmp(void *s1, void *s2, size_t n);
@@ -56,6 +56,8 @@ char	**my_str_to_wordtab(char *str, char c);
 
 int	my_env(char **env);
 int	find_name(char **env, char *str);
+int	find_pwd(char **env);
+int	find_oldpwd(char **env);
 int	check_home(char **env);
 int	check_pwd(char **env);
 int	check_if_built_exist(char *buff);
@@ -63,12 +65,16 @@ int	builtin(char *buff, char **env);
 int	check_value_exist_env(char **env, char *buff);
 char	*my_cd_oldpath(char **env);
 char	*change_path_cd(char *env);
+char	*get_old_pwd(char *str);
+char	*get_pwd(char *str);
+char	*cd_oldpwd(char **env);
 char	**env_tab(char **env);
 char	**builtin_env(char *buff, char **env);
 char	**overwrite_setenv(char **env, char **tab, int i);
 char	**my_unsetenv(char **env, char *buff);
 char	**my_setenv(char **env, char *buff);
 char	**my_cd(char **env, char *cmd);
+char	**change_pwd(char **env, char *cmd);
 
 /* --- END_BUILTIN --- */
 
