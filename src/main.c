@@ -5,10 +5,15 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Wed Apr  5 02:34:03 2017 Nicolas
+** Last update Wed Apr  5 04:12:28 2017 Nicolas
 */
 
 #include "prototypes.h"
+
+void	prompt()
+{
+  my_putstr("Kalashnico @ PC : ", 0, CYAN);
+}
 
 int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 {
@@ -17,7 +22,7 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 
   if (ac != 1)
     return (84);
-  my_putstr("$>", 0);
+  prompt();
   signal_process();
   while ((buff = get_next_line(0)) != NULL)
     {
@@ -29,17 +34,17 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 	{
 	  if ((builtin(buff, env)) == 84 ||
 	      (env = builtin_env(buff, env)) == NULL)
-	    my_putstr("Error in the execution of the command\n", 2);
+	    my_putstr("Error in the execution of the command\n", 2, RED);
 	}
       else
 	{
 	  if ((my_execve_brut(buff, new_av, env)) == 84)
 	    if (my_execve(new_av, env) == 84 && my_strlen(buff) != 0)
-	      my_putstr("Minishell2: Command not found\n", 2);
+	      my_putstr("Minishell2: Command not found\n", 2, RED);
 	}
       free_tab(new_av);
       free(buff);
-      my_putstr("$>", 0);
+      prompt();
     }
   if (buff == NULL)
     return (84);

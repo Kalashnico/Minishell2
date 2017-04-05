@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 00:08:35 2017 Nicolas
-** Last update Wed Apr  5 01:20:26 2017 Nicolas
+** Last update Wed Apr  5 04:06:49 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -13,5 +13,5 @@
 void	get_sigint(int sigint)
 {
   (void)sigint;
-  my_putstr("\n$>", 0);
+  my_putstr("\nKalashnico @ PC : ", 0, CYAN);
 }

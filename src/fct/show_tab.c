@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 01:39:49 2017 Nicolas
-** Last update Wed Apr  5 01:20:45 2017 Nicolas
+** Last update Wed Apr  5 03:56:39 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -19,8 +19,8 @@ int	show_tab(char **tab)
     return (84);
   while (tab[i])
     {
-      my_putstr(tab[i++], 1);
-      my_putchar('\n', 1);
+      my_putstr(tab[i++], 1, WHITE);
+      my_putchar('\n', 1, WHITE);
     }
   return (0);
 }

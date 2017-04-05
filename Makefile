@@ -5,10 +5,10 @@
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
 ## Started on  Wed Apr  5 01:04:14 2017 Nicolas
-## Last update Wed Apr  5 02:32:58 2017 Nicolas
+## Last update Wed Apr  5 03:19:50 2017 Nicolas
 ##
 
-NAME	= my_sh
+NAME	= mysh
 
 CC	= gcc
 
@@ -22,6 +22,7 @@ SRCS	= ./src/builtin/builtin.c	\
 	  ./src/execve/find_if_exist.c	\
 	  ./src/execve/my_exec.c	\
 	  ./src/execve/my_exec_brut.c	\
+	  ./src/fct/my_memset.c		\
 	  ./src/fct/epur_str.c		\
 	  ./src/fct/count_word.c	\
 	  ./src/fct/free_tab.c		\
@@ -38,10 +39,11 @@ SRCS	= ./src/builtin/builtin.c	\
 	  ./src/fct/my_strlen_tab.c	\
 	  ./src/fct/my_strncmp.c	\
 	  ./src/fct/show_tab.c		\
-	  ./src/main.c			\
+	  ./src/signal/get_sigabrt.c	\
 	  ./src/signal/get_sigint.c	\
 	  ./src/signal/get_sigseg.c	\
-	  ./src/signal/signal_process.c 
+	  ./src/signal/signal_process.c\
+	  ./src/main.c
 
 OBJS	= $(SRCS:.c=.o)
 
