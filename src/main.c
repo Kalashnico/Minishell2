@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Wed Apr  5 20:39:03 2017 Nicolas
+** Last update Wed Apr  5 20:48:11 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -30,7 +30,12 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 	  (new_av = my_str_to_wordtab(buff, ' ')) == NULL)
 	return (84);
       if ((my_memcmp("exit", buff, 4) == 0))
-	return (my_getnbr(new_av[1]));
+	{
+	  if (new_av[1] == NULL)
+	    return (0);
+	  else
+	    return (my_getnbr(new_av[1]));
+	}
       if (check_if_built_exist(buff) == 0)
 	{
 	  if ((builtin(buff, env)) == 84 ||

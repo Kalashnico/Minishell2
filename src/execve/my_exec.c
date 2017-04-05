@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 17:05:58 2017 Nicolas
-** Last update Wed Apr  5 06:13:08 2017 Nicolas
+** Last update Wed Apr  5 20:44:22 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -97,7 +97,7 @@ int	my_execve(char **av, char **env)
     return (84);
   if ((cmd = find_good_cmd(tab)) == NULL)
     {
-      if (my_strncmp("./",av[0], 2) != 0)
+      if (my_strncmp("./", av[0], 2) != 0)
 	return (84);
       else
 	if ((find_if_exist((cmd = my_strdup(av[0])))) == 84)
