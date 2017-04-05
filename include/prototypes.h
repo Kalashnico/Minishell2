@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Wed Apr  5 04:08:29 2017 Nicolas
+** Last update Wed Apr  5 04:31:19 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -28,6 +28,7 @@
 /* --- END_MACRO --- */
 
 void	prompt();
+void	init_shell();
 
 /* ---  FCT --- */
 

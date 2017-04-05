@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Wed Apr  5 04:12:28 2017 Nicolas
+** Last update Wed Apr  5 04:31:08 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -15,21 +15,41 @@ void	prompt()
   my_putstr("Kalashnico @ PC : ", 0, CYAN);
 }
 
+void	my_exit()
+{
+  my_putstr("Goodbye, I hope you enjoyed staying with us!\n", 0, GREEN);
+}
+
+void	init_shell()
+{
+  system("clear");
+  my_putstr("----------------------------------------------\n", 0, GREEN);
+  my_putstr("|                                            |\n", 0, GREEN);
+  my_putstr("| Welcome to your shell Kalashnico.          |\n", 0, GREEN);
+  my_putstr("| How was your day without coding ?          |\n", 0, GREEN);
+  my_putstr("|                                            |\n", 0, GREEN);
+  my_putstr("|                                            |\n", 0, GREEN);
+  my_putstr("|                             minishell_2.0.3|\n", 0, GREEN);
+  my_putstr("----------------------------------------------\n\n\n", 0, GREEN);
+  prompt();
+}
+  
+  
 int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 {
   char	*buff;
   char	**new_av;
 
   if (ac != 1)
-    return (84);
-  prompt();
+    return (my_putstr("Too many arguments !\n", 0, RED), 84);
+  init_shell();
   signal_process();
   while ((buff = get_next_line(0)) != NULL)
     {
       if ((buff = epur_str(buff)) == NULL ||
 	  (new_av = my_str_to_wordtab(buff, ' ')) == NULL ||
 	  (my_memcmp("exit", buff, 4) == 0))
-	return (0);
+	return (my_exit(), 0);
       if (check_if_built_exist(buff) == 0)
 	{
 	  if ((builtin(buff, env)) == 84 ||
