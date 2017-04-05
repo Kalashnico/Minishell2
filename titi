@@ -1,0 +1,11 @@
+total 80
+drwxrwxr-x 2 nicolas nicolas  4096 Apr  5 20:15 bonus
+drwxrwxr-x 2 nicolas nicolas  4096 Apr  5 20:22 include
+-rw-rw-r-- 1 nicolas nicolas  1430 Apr  5 08:02 Makefile
+-rwxrwxr-x 1 nicolas nicolas  7965 Apr  5 20:35 mini_mouli.sh
+-rwxrwxr-x 1 nicolas nicolas 44416 Apr  5 20:35 mysh
+drwxrwxr-x 6 nicolas nicolas  4096 Apr  5 20:35 src
+-rwxr-xr-x 1 nicolas nicolas  3544 Mar 21 10:31 tester.sh
+-rw-r--r-- 1 nicolas nicolas  2604 Mar 21 10:44 tests
+-rw-rw-r-- 1 nicolas nicolas     0 Apr  5 20:35 titi
+drwxrwxr-x 2 nicolas nicolas  4096 Apr  5 20:35 toto
