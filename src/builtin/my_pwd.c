@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 03:30:42 2017 Nicolas
-** Last update Wed Apr  5 08:21:50 2017 Nicolas
+** Last update Wed Apr  5 23:39:06 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -35,6 +35,7 @@ char	*get_old_pwd(char *str)
   j = 10;
   if ((new_str = malloc(sizeof(char) * my_strlen(str) + 11)) == NULL)
     return (NULL);
+  my_memset(new_str, '\0', (my_strlen(str) + 11));
   my_strcat(new_str, "setenv OLD");
   while (str && str[i])
     {
@@ -86,20 +87,11 @@ char	*get_new_pwd(char *str, char *cmd)
 char	**change_pwd(char **env, char *cmd)
 {
   int	i;
-  char	*new_pwd;
-  char	*pwd;
 
   i = find_pwd(env);
-  if ((pwd = get_pwd(env[i])) == NULL ||
-      (env = my_unsetenv(env, "unsetenv PWD")) == NULL ||
-      (new_pwd = malloc(sizeof(char) * my_strlen(pwd)
-			+ my_strlen(cmd) + 13)) == NULL)
+  if ((env[i] = my_realloc(env[i], (my_strlen(cmd) + 2))) == NULL)
     return (NULL);
-  my_strcat(new_pwd, "setenv PWD ");
-  my_strcat(new_pwd, pwd);
-  my_strcat(new_pwd, "/");
-  my_strcat(new_pwd, cmd);
-  if ((env = my_setenv(env, new_pwd)) == NULL)
-    return (NULL);
+  my_strcat(env[i], "/");
+  my_strcat(env[i], cmd);
   return (env);
 }

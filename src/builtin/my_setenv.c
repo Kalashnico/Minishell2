@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Mon Apr  3 15:28:46 2017 Nicolas
-** Last update Wed Apr  5 08:22:19 2017 Nicolas
+** Last update Wed Apr  5 23:22:34 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -47,7 +47,7 @@ char	**overwrite_setenv(char **env, char **tab, int i)
 {
   my_memset(env[i], '\0', my_strlen(env[i]) + 1);
   if ((env[i] = my_realloc(env[i], my_strlen(tab[1])
-			  + my_strlen(tab[2]) + 2)) == NULL)
+			   + my_strlen(tab[2]) + 1)) == NULL)
     return (NULL);
   my_strcpy(env[i], tab[1]);
   my_strcat(env[i], "=");

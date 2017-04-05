@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Wed Apr  5 20:20:08 2017 Nicolas
+** Last update Wed Apr  5 23:35:28 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -49,7 +49,7 @@ int	find_oldpwd(char **env)
 	return (i);
       i++;
     }
-  return (0);
+  return (842);
 }
 
 char	*cd_oldpwd(char **env)
@@ -58,15 +58,13 @@ char	*cd_oldpwd(char **env)
   char	*new_str;
   int	j;
   int	n;
-    
-  i = find_oldpwd(env);
+
   j = 0;
-  n = (i = 0) ? 3 : 7;
-  if (i == 0)
-    i = find_pwd(env);
-  if ((new_str = malloc(sizeof(char) * my_strlen(env[i]) + 1)) == NULL)
+  n = 7;
+  if ((i = find_oldpwd(env)) == 842 ||
+      (new_str = malloc(sizeof(char) * my_strlen(env[i]) + 1)) == NULL)
     return (NULL);
-  while (env && env[i])
+  while (env && env[i] && env[i][n])
     {
       new_str[j] = env[i][n];
       j++;
@@ -93,12 +91,13 @@ char	**my_cd(char **env, char *cmd)
     }
   else if ((my_memcmp(tab[1], "-", 1) == 0))
     {
-      i = find_oldpwd(env);
-      if ((chdir(cd_oldpwd(env))) == -1)
+      if ((cmd = cd_oldpwd(env)) == NULL)
+	return (my_putstr("Not a directory.\n", 2), env);
+      if ((chdir(cmd)) == -1)
 	return (my_putstr("Access denied : ", 2), env);
     }
   else if (chdir(tab[1]) == -1)
-    return (my_putstr("Access denied !\n", 2), env);
+    return (my_putstr(tab[1], 2), my_putstr(": Not a directory.\n", 2), env);
   if ((env = my_setenv(env, get_old_pwd(env[i]))) == NULL ||
       (env = change_pwd(env, tab[1])) == NULL)
     return (NULL);
