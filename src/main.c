@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Thu Apr  6 16:28:27 2017 Nicolas
+** Last update Thu Apr  6 16:38:17 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -28,7 +28,6 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
   ret = 0;
   while ((buff = get_next_line(0)) != NULL)
     {
-      printf("buff = %s\n", buff);
       if ((buff = epur_str(buff)) == NULL ||
 	  (new_av = my_str_to_wordtab(buff, ' ')) == NULL)
 	return (84);
