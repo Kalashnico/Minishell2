@@ -1,20 +1,22 @@
 /*
-** my_strncmp.c for my_strncmp in /home/nicolas/Epitech/Shell/PSU_2016_minishell2
+** my_strncmp.c for strncmp in /home/nicolas/Epitech/Shell/PSU_2016_minishell2/src/fct
 ** 
 ** Made by Nicolas
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
-** Started on  Mon Apr  3 20:57:15 2017 Nicolas
-** Last update Wed Apr  5 01:21:42 2017 Nicolas
+** Started on  Thu Apr  6 16:29:33 2017 Nicolas
+** Last update Thu Apr  6 16:30:49 2017 Nicolas
 */
 
 #include "prototypes.h"
 
-int	my_strncmp(char *s1, char *s2, int n)
+int     my_strncmp(char *s1, char *s2, int n)
 {
-  int	i;
+  int   i;
 
   i = 0;
+  if (s1 == NULL || s2 == NULL || n == 0)
+    return (84);
   while (i < n)
     {
       if (s1[i] != s2[i])

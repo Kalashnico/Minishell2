@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Thu Apr  6 00:37:15 2017 Nicolas
+** Last update Thu Apr  6 14:50:46 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -60,7 +60,6 @@ char	*cd_oldpwd(char **env)
   int	n;
 
   j = 0;
-  //n = 7;
   if ((i = find_oldpwd(env)) == 842 ||
       (new_str = malloc(sizeof(char) * my_strlen(env[i]) + 1)) == NULL)
     return (NULL);

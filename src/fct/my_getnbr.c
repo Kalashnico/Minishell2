@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 20:41:11 2017 Nicolas
-** Last update Wed Apr  5 20:41:24 2017 Nicolas
+** Last update Thu Apr  6 15:55:04 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -17,7 +17,7 @@ int	my_getnbr(char *str)
 
   n = 0;
   a = 0;
-  while (str[n] != '\0')
+  while (str && str[n] != '\0')
     {
       a = a * 10 + str[n] - 48;
       n = n + 1;

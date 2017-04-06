@@ -5,7 +5,7 @@
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
 ## Started on  Wed Apr  5 01:04:14 2017 Nicolas
-## Last update Thu Apr  6 00:39:46 2017 Nicolas
+## Last update Thu Apr  6 16:29:20 2017 Nicolas
 ##
 
 NAME	= mysh
@@ -24,6 +24,7 @@ SRCS	= ./src/builtin/builtin.c	\
 	  ./src/execve/my_exec.c	\
 	  ./src/execve/my_exec_brut.c	\
 	  ./src/fct/find_pos_equal.c	\
+	  ./src/fct/my_strcmp.c		\
 	  ./src/fct/my_getnbr.c		\
 	  ./src/fct/my_memset.c		\
 	  ./src/fct/epur_str.c		\
@@ -39,8 +40,8 @@ SRCS	= ./src/builtin/builtin.c	\
 	  ./src/fct/my_strcpy.c		\
 	  ./src/fct/my_strdup.c		\
 	  ./src/fct/my_strlen.c		\
-	  ./src/fct/my_strlen_tab.c	\
 	  ./src/fct/my_strncmp.c	\
+	  ./src/fct/my_strlen_tab.c	\
 	  ./src/fct/show_tab.c		\
 	  ./src/signal/get_sigabrt.c	\
 	  ./src/signal/get_sigint.c	\
