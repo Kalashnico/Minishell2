@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Thu Apr  6 14:50:46 2017 Nicolas
+** Last update Thu Apr  6 23:58:35 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -94,7 +94,7 @@ char	**my_cd(char **env, char *cmd)
       if ((cmd = cd_oldpwd(env)) == NULL)
 	return (my_putstr("Not a directory.\n", 2), env);
       if ((chdir(cmd)) == -1)
-	return (my_putstr("Access denied : ", 2), env);
+	return (my_putstr("Access denied :\n", 2), env);
     }
   else if (chdir(tab[1]) == -1)
     return (my_putstr(tab[1], 2), my_putstr(": Not a directory.\n", 2), env);

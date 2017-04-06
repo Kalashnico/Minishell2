@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Thu Apr  6 00:34:23 2017 Nicolas
-** Last update Thu Apr  6 00:36:19 2017 Nicolas
+** Last update Thu Apr  6 23:57:12 2017 Nicolas
 */
 
 int	find_pos_equal(char *path)
@@ -15,5 +15,6 @@ int	find_pos_equal(char *path)
   i = 0;
   while (path && path[i] != '=')
     i++;
+  i++;
   return (i);
 }

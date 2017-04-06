@@ -5,12 +5,12 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Thu Apr  6 16:29:33 2017 Nicolas
-** Last update Thu Apr  6 16:30:49 2017 Nicolas
+** Last update Thu Apr  6 23:49:13 2017 Nicolas
 */
 
 #include "prototypes.h"
 
-int     my_strncmp(char *s1, char *s2, int n)
+int	my_strncmp(char *s1, char *s2, int n)
 {
   int   i;
 
