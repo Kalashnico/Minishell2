@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Thu Apr  6 23:44:09 2017 Nicolas
+** Last update Thu Apr  6 23:45:37 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -62,7 +62,6 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 	 return (my_getnbr(new_av[1]));
        if ((env = mysh(env, buff, new_av, &ret)) == NULL)
 	 return (84);
-       printf("ret = %d\n", ret);
     }
   free(new_av);
   return (ret);
