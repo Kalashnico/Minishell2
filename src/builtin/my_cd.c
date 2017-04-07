@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Thu Apr  6 23:58:35 2017 Nicolas
+** Last update Fri Apr  7 00:59:51 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -74,10 +74,9 @@ char	*cd_oldpwd(char **env)
   return (new_str);
 }
 
-char	**my_cd(char **env, char *cmd)
+char	**my_cd(char **env, char *cmd, int i)
 {
   char	**tab;
-  int	i;
 
   i = find_pwd(env);
   if ((tab = my_str_to_wordtab(cmd, ' ')) == NULL)

@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Thu Apr  6 23:54:39 2017 Nicolas
+** Last update Fri Apr  7 02:18:10 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -42,16 +42,23 @@ char	**mysh(char **env, char *buff, char **new_av, int *ret)
   return (env);
 }
 
+int	init_shell(int ac)
+{
+  if (ac != 1)
+    return (84);
+  prompt();
+  signal_process();
+  return (0);
+}
+
 int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 {
   char	*buff;
   char	**new_av;
   int	ret;
-
-  if (ac != 1)
+  
+  if ((init_shell(ac)) == 84)
     return (my_putstr("Too many arguments !\n", 2), 84);
-  prompt();
-  signal_process();
   ret = 0;
   while ((buff = get_next_line(0)) != NULL)
     {
