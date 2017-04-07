@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Fri Apr  7 05:15:40 2017 Nicolas
+** Last update Fri Apr  7 16:10:45 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -60,18 +60,13 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
   ret = 0;
   while ((buff = get_next_line(0)) != NULL)
     {
-      if (count_pipe(buff) < 2)
-	{
-	  if ((buff = epur_str(buff)) == NULL ||
-	      (new_av = my_str_to_wordtab(buff, ' ')) == NULL)
-	    return (84);
-	  if ((my_strcmp("exit", new_av[0]) == 0))
-	    return (my_getnbr(new_av[1]));
-	  if ((env = mysh(env, buff, new_av, &ret)) == NULL)
-	    return (84);
-	}
-      else
-	prompt();
+      if ((buff = epur_str(buff)) == NULL ||
+	  (new_av = my_str_to_wordtab(buff, ' ')) == NULL)
+	return (84);
+      if ((my_strcmp("exit", new_av[0]) == 0))
+	return (my_getnbr(new_av[1]));
+      if ((env = mysh(env, buff, new_av, &ret)) == NULL)
+	return (84);
     }
   free(new_av);
   return (ret);
