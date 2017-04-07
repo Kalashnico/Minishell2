@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Fri Apr  7 06:04:58 2017 Nicolas
+** Last update Fri Apr  7 06:21:00 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -87,14 +87,14 @@ char	**my_cd(char **env, char **tab, char *cmd, int *ret)
   else if ((my_memcmp(tab[1], "-", 1) == 0))
     {
       if ((cmd = cd_oldpwd(env)) == NULL)
-	return (my_putstr("Not a directory.\n", 2), env);
+	return (my_putstr("Not a directory.\n", 2, RED), env);
       if ((chdir(cmd)) == -1)
-	return (my_putstr("Access denied :\n", 2), env);
+	return (my_putstr("Access denied :\n", 2, RED), env);
     }
   else if (chdir(tab[1]) == -1)
     {
       *ret = 1;
-      return (my_putstr(tab[1], 2), my_putstr(": Not a directory.\n", 2), env);
+      return (my_putstr(tab[1], 2, YELLOW), my_putstr(": Not a directory.\n", 2, RED), env);
     }
   if ((env = my_setenv(env, get_old_pwd(env[i]))) == NULL ||
       (env = change_pwd(env, tab[1])) == NULL)

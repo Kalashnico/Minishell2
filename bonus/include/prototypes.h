@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Fri Apr  7 06:12:48 2017 Nicolas
+** Last update Fri Apr  7 06:12:15 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -16,14 +16,25 @@
 #include <unistd.h>
 #include <wait.h>
 
+/* --- MACRO --- */
+
+# define RED                    "\033[1;31m"
+# define GREEN                  "\033[1;32m"
+# define CYAN                   "\033[1;36m"
+# define BLUE                   "\033[1;34m"
+# define YELLOW                 "\033[1;33m"
+# define WHITE			"\033[0;m"
+
+/* --- END_MACRO --- */
+
 void	prompt();
 int	init_shell(int ac);
 char	**mysh(char **env, char *buff, char **new_av, int *ret);
 
 /* ---  FCT --- */
 
-void	my_putchar(char c, int fd);
-void	my_putstr(char *str, int fd);
+void	my_putchar(char c, int fd, char *color);
+void	my_putstr(char *str, int fd, char *color);
 void	free_tab(char **av);
 void	my_memset(void *s, int f, int n);
 void	my_strcat(char *dest, char *src);
