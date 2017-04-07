@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Fri Apr  7 02:19:43 2017 Nicolas
+** Last update Fri Apr  7 03:59:06 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -74,11 +74,11 @@ char	*get_old_pwd(char *str);
 char	*get_pwd(char *str);
 char	*cd_oldpwd(char **env);
 char	**env_tab(char **env);
-char	**builtin_env(char *buff, char **env);
+char	**builtin_env(char *buff, char **env, int *ret);
 char	**overwrite_setenv(char **env, char **tab, int i);
 char	**my_unsetenv(char **env, char *buff);
 char	**my_setenv(char **env, char *buff);
-char	**my_cd(char **env, char *cmd, int i);
+char	**my_cd(char **env, char *cmd, int i, int *ret);
 char	**change_pwd(char **env, char *cmd);
 
 /* --- END_BUILTIN --- */
@@ -98,9 +98,7 @@ char	**get_new_path(char **env, char *buff);
 /* --- SIGNAL --- */
 
 void	signal_process();
-void	get_sigseg(int sigint);
 void	get_sigint(int sigint);
-void	get_sigabrt(int sigint);
 
 /* --- END_SIGNAL --- */
 

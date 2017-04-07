@@ -5,7 +5,7 @@
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
 ## Started on  Wed Apr  5 01:04:14 2017 Nicolas
-## Last update Thu Apr  6 23:53:20 2017 Nicolas
+## Last update Fri Apr  7 03:30:24 2017 Nicolas
 ##
 
 NAME	= mysh
@@ -44,10 +44,8 @@ SRCS	= ./src/builtin/builtin.c	\
 	  ./src/fct/my_strncmp.c	\
 	  ./src/fct/my_strlen_tab.c	\
 	  ./src/fct/show_tab.c		\
-	  ./src/signal/get_sigabrt.c	\
 	  ./src/signal/get_sigint.c	\
-	  ./src/signal/get_sigseg.c	\
-	  ./src/signal/signal_process.c\
+	  ./src/signal/signal_process.c	\
 	  ./src/main.c
 
 OBJS	= $(SRCS:.c=.o)

@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Fri Apr  7 02:18:10 2017 Nicolas
+** Last update Fri Apr  7 04:00:03 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -20,11 +20,8 @@ char	**mysh(char **env, char *buff, char **new_av, int *ret)
   if (check_if_built_exist(buff) == 0)
     {
       if ((builtin(buff, env)) == 84 ||
-	  (env = builtin_env(buff, env)) == NULL)
-	{
-	  my_putstr("Error in the execution of the command\n", 2);
-	  *ret = 1;
-	}
+	  (env = builtin_env(buff, env, ret)) == NULL)
+	my_putstr("Error in the execution of the command\n", 2);
     }
   else
     {
