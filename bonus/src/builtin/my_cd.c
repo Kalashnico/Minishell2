@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Fri Apr  7 06:21:00 2017 Nicolas
+** Last update Fri Apr  7 17:56:46 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -94,7 +94,8 @@ char	**my_cd(char **env, char **tab, char *cmd, int *ret)
   else if (chdir(tab[1]) == -1)
     {
       *ret = 1;
-      return (my_putstr(tab[1], 2, YELLOW), my_putstr(": Not a directory.\n", 2, RED), env);
+      return (my_putstr(tab[1], 2, YELLOW),
+	      my_putstr(": Not a directory.\n", 2, RED), env);
     }
   if ((env = my_setenv(env, get_old_pwd(env[i]))) == NULL ||
       (env = change_pwd(env, tab[1])) == NULL)
