@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Fri Apr  7 03:59:06 2017 Nicolas
+** Last update Fri Apr  7 04:10:40 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -78,7 +78,7 @@ char	**builtin_env(char *buff, char **env, int *ret);
 char	**overwrite_setenv(char **env, char **tab, int i);
 char	**my_unsetenv(char **env, char *buff);
 char	**my_setenv(char **env, char *buff);
-char	**my_cd(char **env, char *cmd, int i, int *ret);
+char	**my_cd(char **env, char **tab, char *cmd, int *ret);
 char	**change_pwd(char **env, char *cmd);
 
 /* --- END_BUILTIN --- */

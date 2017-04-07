@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Fri Apr  7 03:58:02 2017 Nicolas
+** Last update Fri Apr  7 04:13:13 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -74,13 +74,11 @@ char	*cd_oldpwd(char **env)
   return (new_str);
 }
 
-char	**my_cd(char **env, char *cmd, int i, int *ret)
+char	**my_cd(char **env, char **tab, char *cmd, int *ret)
 {
-  char	**tab;
+  int	i;
 
   i = find_pwd(env);
-  if ((tab = my_str_to_wordtab(cmd, ' ')) == NULL)
-    return (NULL);
   if ((my_memcmp(tab[1], "~", 1) == 0))
     {
       if ((cmd = my_cd_home(env)) == NULL)

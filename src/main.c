@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Fri Apr  7 04:00:03 2017 Nicolas
+** Last update Fri Apr  7 04:03:05 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -53,7 +53,7 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
   char	*buff;
   char	**new_av;
   int	ret;
-  
+
   if ((init_shell(ac)) == 84)
     return (my_putstr("Too many arguments !\n", 2), 84);
   ret = 0;
