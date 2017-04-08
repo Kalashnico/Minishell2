@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Fri Apr  7 06:12:48 2017 Nicolas
+** Last update Sat Apr  8 15:30:31 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -29,6 +29,7 @@ void	my_memset(void *s, int f, int n);
 void	my_strcat(char *dest, char *src);
 int	find_pos_equal(char *path);
 int	count_pipe(char *buff);
+int	count_colum(char *buff);
 int	my_getnbr(char *str);
 int	my_strlen(char *str);
 int	my_strncmp(char *s1, char *s2, int n);

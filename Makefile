@@ -5,7 +5,7 @@
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
 ## Started on  Wed Apr  5 01:04:14 2017 Nicolas
-## Last update Fri Apr  7 05:59:53 2017 Nicolas
+## Last update Sat Apr  8 15:29:57 2017 Nicolas
 ##
 
 NAME	= mysh
@@ -32,6 +32,7 @@ SRCS	= ./src/builtin/builtin.c		\
 	  ./src/fct/epur_str.c			\
 	  ./src/fct/count_word.c		\
 	  ./src/fct/free_tab.c			\
+	  ./src/fct/count_colums.c		\
 	  ./src/fct/get_next_line.c		\
 	  ./src/fct/count_pipe.c		\
 	  ./src/fct/my_memcmp.c			\

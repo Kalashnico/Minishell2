@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Fri Apr  7 16:10:45 2017 Nicolas
+** Last update Sat Apr  8 15:59:47 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -34,8 +34,6 @@ char	**mysh(char **env, char *buff, char **new_av, int *ret)
 	  }
     }
   free_tab(new_av);
-  free(buff);
-  prompt();
   return (env);
 }
 
@@ -49,10 +47,30 @@ int	init_shell(int ac)
   return (0);
 }
 
+char	**shell_loop(char **env, char **new_tab, int *ret)
+{
+  char	**new_av;
+  int	i;
+
+  i = 0;
+  while (new_tab && new_tab[i])
+    {
+      if ((new_tab[i] = epur_str(new_tab[i])) == NULL ||
+	  (new_av = my_str_to_wordtab(new_tab[i], ' ')) == NULL)
+	return (NULL);
+      if ((my_strcmp("exit", new_av[0]) == 0))
+	exit(my_getnbr(new_av[1]));
+      if ((env = mysh(env, new_tab[i], new_av, ret)) == NULL)
+	return (NULL);
+      i++;
+    }
+  return (env);
+}
+
 int	main(int ac,__attribute__ ((unused)) char **av, char **env)
 {
   char	*buff;
-  char	**new_av;
+  char	**new_tab;
   int	ret;
 
   if ((init_shell(ac)) == 84)
@@ -60,14 +78,11 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
   ret = 0;
   while ((buff = get_next_line(0)) != NULL)
     {
-      if ((buff = epur_str(buff)) == NULL ||
-	  (new_av = my_str_to_wordtab(buff, ' ')) == NULL)
+      if ((new_tab = my_str_to_wordtab(buff, ';')) == NULL)
 	return (84);
-      if ((my_strcmp("exit", new_av[0]) == 0))
-	return (my_getnbr(new_av[1]));
-      if ((env = mysh(env, buff, new_av, &ret)) == NULL)
+      if ((env = shell_loop(env, new_tab, &ret)) == NULL)
 	return (84);
+      prompt();
     }
-  free(new_av);
   return (ret);
 }
