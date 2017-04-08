@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Sat Apr  8 22:27:32 2017 Nicolas
+** Last update Sat Apr  8 23:15:08 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -80,11 +80,11 @@ int	main(int ac,__attribute__ ((unused)) char **av, char **env)
     {
       if (count_pipe(buff) < 1)
 	{
-	if ((new_tab = my_str_to_wordtab(buff, ';')) == NULL)
-	  return (84);
-	if ((env = shell_loop(env, new_tab, &ret)) == NULL)
-	  return (84);
-	prompt();
+	  if ((new_tab = my_str_to_wordtab(buff, ';')) == NULL)
+	    return (84);
+	  if ((env = shell_loop(env, new_tab, &ret)) == NULL)
+	    return (84);
+	  prompt();
 	}
       else
 	prompt();
