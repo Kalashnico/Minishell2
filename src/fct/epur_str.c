@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 02:29:00 2017 Nicolas
-** Last update Wed Apr  5 02:35:14 2017 Nicolas
+** Last update Sat Apr  8 16:22:31 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -16,11 +16,11 @@ char	*epur_str(char *str)
   int	i;
   int	j;
 
-  i = 0;
+  i = (str[0] == ' ') ? 1 : 0;
   j = 0;
-  if ((src = malloc(sizeof(char *) * my_strlen(str))) == NULL)
+  if ((src = malloc(sizeof(char) * (my_strlen(str) + 1))) == NULL)
     return (NULL);
-  while (str[i] != '\0')
+  while (str && str[i] != '\0')
     {
       if (str[i] == ' ' || str[i] == '\t')
 	{
