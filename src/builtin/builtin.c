@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 18:35:03 2017 Nicolas
-** Last update Fri Apr  7 04:14:15 2017 Nicolas
+** Last update Sat Apr  8 22:55:52 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -28,14 +28,14 @@ int	builtin(char *buff, char **env)
   return (0);
 }
 
-char	**builtin_env(char *buff, char **env, int *ret)
+char	**builtin_env(char *buff, char **env, t_point *st_rt)
 {
   char	**tab;
 
   if ((tab = my_str_to_wordtab(buff, ' ')) == NULL)
     return (NULL);
   if (my_memcmp("cd ", buff, 3) == 0)
-    if (my_cd(env, tab, buff, ret) == NULL)
+    if (my_cd(env, tab, buff, st_rt) == NULL)
       return (NULL);
   if (my_memcmp("setenv", buff, 6) == 0)
     if ((env = my_setenv(env, buff)) == NULL)

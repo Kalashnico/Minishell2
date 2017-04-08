@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Tue Apr  4 23:39:59 2017 Nicolas
-** Last update Fri Apr  7 06:04:58 2017 Nicolas
+** Last update Sat Apr  8 23:02:49 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -74,7 +74,7 @@ char	*cd_oldpwd(char **env)
   return (new_str);
 }
 
-char	**my_cd(char **env, char **tab, char *cmd, int *ret)
+char	**my_cd(char **env, char **tab, char *cmd, t_point *st_rt)
 {
   int	i;
 
@@ -93,7 +93,7 @@ char	**my_cd(char **env, char **tab, char *cmd, int *ret)
     }
   else if (chdir(tab[1]) == -1)
     {
-      *ret = 1;
+      st_rt->ret = 1;
       return (my_putstr(tab[1], 2), my_putstr(": Not a directory.\n", 2), env);
     }
   if ((env = my_setenv(env, get_old_pwd(env[i]))) == NULL ||

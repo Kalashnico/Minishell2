@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Sat Apr  8 15:30:31 2017 Nicolas
+** Last update Sat Apr  8 23:18:33 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -16,9 +16,20 @@
 #include <unistd.h>
 #include <wait.h>
 
+typedef struct	s_point
+{
+  pid_t	pid;
+  int	ret;
+}		t_point;
+
+/* --- SHELL --- */
+
 void	prompt();
 int	init_shell(int ac);
-char	**mysh(char **env, char *buff, char **new_av, int *ret);
+char	**shell_loop(char **env, char **new_tab, t_point *st_rt);
+char	**mysh(char **env, char *buff, char **new_av, t_point *st_rt);
+
+/* --- END_SHELL --- */
 
 /* ---  FCT --- */
 
@@ -66,21 +77,21 @@ char	*get_pwd(char *str);
 char	*cd_oldpwd(char **env);
 char	**cd_home_exec(char *cmd, char **env);		       
 char	**env_tab(char **env);
-char	**builtin_env(char *buff, char **env, int *ret);
+char	**builtin_env(char *buff, char **env, t_point *st_rt);
 char	**overwrite_setenv(char **env, char **tab, int i);
 char	**my_unsetenv(char **env, char *buff);
 char	**my_setenv(char **env, char *buff);
-char	**my_cd(char **env, char **tab, char *cmd, int *ret);
+char	**my_cd(char **env, char **tab, char *cmd, t_point *st_rt);
 char	**change_pwd(char **env, char *cmd);
 
 /* --- END_BUILTIN --- */
 
 /* --- EXECVE --- */
 
-int	my_execve(char **av, char **env);
-int	my_execve_brut(char *path, char **av, char **env);
+int	my_execve(char **av, char **env, t_point *st_rt);
+int	my_execve_brut(char *path, char **av, char **env, t_point *st_rt);
 int	find_if_exist(char *cmd);
-int	wait_pid_exec(char *cmd, char **av, char **env, pid_t pid);
+int	wait_pid_exec(char *cmd, char **av, char **env, t_point *st_rt);
 int	check_path(char **env);
 char	*change_path(char *env);
 char	*find_good_cmd(char **path);
@@ -90,7 +101,7 @@ char	**get_new_path(char **env, char *buff);
 
 /* --- SIGNAL --- */
 
-void	signal_process(int sigint);
+void	signal_process(int sigint, t_point *st_rt);
 void	get_sigint(int sigint);
 
 /* --- END_SIGNAL --- */

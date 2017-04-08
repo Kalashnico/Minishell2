@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 17:05:58 2017 Nicolas
-** Last update Fri Apr  7 05:51:31 2017 Nicolas
+** Last update Sat Apr  8 22:58:01 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -85,11 +85,10 @@ char	*find_good_cmd(char **path)
   return (NULL);
 }
 
-int	my_execve(char **av, char **env)
+int	my_execve(char **av, char **env, t_point *st_rt)
 {
   char	**tab;
   char	*cmd;
-  pid_t	pid;
 
   if ((tab = get_new_path(env, av[0])) == NULL ||
       (av[0] == NULL))
@@ -102,9 +101,9 @@ int	my_execve(char **av, char **env)
 	if ((find_if_exist((cmd = my_strdup(av[0])))) == 84)
 	  return (84);
     }
-  if ((pid = fork()) == -1)
+  if ((st_rt->pid = fork()) == -1)
     return (84);
-  if (wait_pid_exec(cmd, av, env, pid) == 84)
+  if (wait_pid_exec(cmd, av, env, st_rt) == 84)
       return (84);
   return (0);
 }
