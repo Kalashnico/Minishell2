@@ -5,7 +5,7 @@
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
 ## Started on  Wed Apr  5 01:04:14 2017 Nicolas
-## Last update Sat Apr  8 15:29:57 2017 Nicolas
+## Last update Sun Apr  9 01:08:46 2017 Nicolas
 ##
 
 NAME	= mysh
@@ -39,6 +39,7 @@ SRCS	= ./src/builtin/builtin.c		\
 	  ./src/fct/my_putchar.c		\
 	  ./src/fct/my_putstr.c			\
 	  ./src/fct/my_realloc.c		\
+	  ./src/fct/copy_tab.c			\
 	  ./src/fct/my_str_to_wordtab.c		\
 	  ./src/fct/my_strcat.c			\
 	  ./src/fct/my_strcpy.c			\

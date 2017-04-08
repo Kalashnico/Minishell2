@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Sat Apr  8 23:08:20 2017 Nicolas
+** Last update Sun Apr  9 01:09:38 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -71,10 +71,13 @@ int		main(int ac,__attribute__ ((unused)) char **av, char **env)
 {
   char		*buff;
   char		**new_tab;
+  char		**new_env;
   t_point	st_rt;
 
   if ((init_shell(ac)) == 84)
     return (my_putstr("Too many arguments !\n", 2), 84);
+  if ((new_env = copy_tab(env)) == NULL)
+    return (84);
   st_rt.ret = 0;
   while ((buff = get_next_line(0)) != NULL)
     {
@@ -82,7 +85,7 @@ int		main(int ac,__attribute__ ((unused)) char **av, char **env)
 	{
 	if ((new_tab = my_str_to_wordtab(buff, ';')) == NULL)
 	  return (84);
-	if ((env = shell_loop(env, new_tab, &st_rt)) == NULL)
+	if ((new_env = shell_loop(new_env, new_tab, &st_rt)) == NULL)
 	  return (84);
 	prompt();
 	}

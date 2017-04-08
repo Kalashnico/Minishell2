@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Sat Apr  8 23:18:33 2017 Nicolas
+** Last update Sun Apr  9 01:09:56 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -54,6 +54,7 @@ char	*get_next_line(const int fd);
 char	*my_realloc(char *buff, int nb);
 char	*my_strdup(char *src);
 char	*my_strcpy(char *dest, char *src);
+char	**copy_tab(char **tab);
 char	**my_str_to_wordtab(char *str, char c);
 
 /* --- END_FCT --- */
