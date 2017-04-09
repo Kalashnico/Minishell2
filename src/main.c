@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Sun Apr  9 15:30:45 2017 Nicolas
+** Last update Sun Apr  9 19:52:24 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -67,7 +67,7 @@ char	**shell_loop(char **env, char **new_tab, t_point *st_rt)
   return (env);
 }
 
-int		main(int ac,__attribute__ ((unused)) char **av, char **env)
+int		main(int ac, __attribute__ ((unused)) char **av, char **env)
 {
   char		*buff;
   char		**new_tab;
@@ -81,11 +81,16 @@ int		main(int ac,__attribute__ ((unused)) char **av, char **env)
   st_rt.ret = 0;
   while ((buff = get_next_line(0)) != NULL)
     {
-      if ((new_tab = my_str_to_wordtab(buff, ';')) == NULL)
-	return (84);
-      if ((new_env = shell_loop(new_env, new_tab, &st_rt)) == NULL)
-	return (84);
-      prompt();
+      if (count_pipe(buff) < 2)
+	{
+	  if ((new_tab = my_str_to_wordtab(buff, ';')) == NULL)
+	    return (84);
+	  if ((new_env = shell_loop(new_env, new_tab, &st_rt)) == NULL)
+	    return (84);
+	  prompt();
+	}
+      else
+	prompt();
     }
   return (st_rt.ret);
 }

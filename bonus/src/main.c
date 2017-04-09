@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Sun Apr  9 02:56:38 2017 Nicolas
+** Last update Sun Apr  9 15:39:16 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -75,7 +75,7 @@ char	**shell_loop(char **env, char **new_tab, t_point *st_rt)
   return (env);
 }
 
-int		main(int ac,__attribute__ ((unused)) char **av, char **env)
+int		main(int ac, __attribute__ ((unused)) char **av, char **env)
 {
   char		*buff;
   char		**new_tab;
