@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Mon Apr  3 15:28:46 2017 Nicolas
-** Last update Wed Apr  5 23:22:34 2017 Nicolas
+** Last update Sun Apr  9 02:51:40 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -55,9 +55,8 @@ char	**overwrite_setenv(char **env, char **tab, int i)
   return (env);
 }
 
-char	**my_setenv(char **env, char *buff)
+char	**my_setenv(char **env, char *buff, int i)
 {
-  int	i;
   char	*new_str;
   char	**tab;
   char	**new_tab;
@@ -66,9 +65,10 @@ char	**my_setenv(char **env, char *buff)
     return (NULL);
   if (tab[1] == NULL)
     return (my_env(env), env);
+  if (my_str_isalpha(tab[1]) == 84)
+    return (my_putstr("Setenv error: wrong arguments.\n", 2, RED), env);
   if ((i = check_value_exist_env(env, tab[1])) != 0)
     return (overwrite_setenv(env, tab, i));
-  i = my_strlen_tab(env);
   if ((new_tab = env_tab(env)) == NULL ||
       (new_str =
        malloc(sizeof(char) * (my_strlen(tab[1]) + my_strlen(tab[2]) + 3)))
@@ -79,7 +79,6 @@ char	**my_setenv(char **env, char *buff)
   my_strcat(new_str, tab[2]);
   if ((new_tab[i] = my_strdup(new_str)) == NULL)
     return (NULL);
-  i++;
-  new_tab[i] = NULL;
+  new_tab[i + 1] = NULL;
   return (new_tab);
 }

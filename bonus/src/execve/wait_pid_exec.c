@@ -5,16 +5,16 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Fri Apr  7 05:51:10 2017 Nicolas
-** Last update Fri Apr  7 05:51:26 2017 Nicolas
+** Last update Sat Apr  8 23:05:15 2017 Nicolas
 */
 
 #include "prototypes.h"
 
-int	wait_pid_exec(char *cmd, char **av, char **env, pid_t pid)
+int	wait_pid_exec(char *cmd, char **av, char **env, t_point *st_rt)
 {
   int   status;
 
-  if (pid == 0)
+  if (st_rt->pid == 0)
     {
       if ((execve(cmd, av, env)) == -1)
 	return (84);
@@ -23,7 +23,7 @@ int	wait_pid_exec(char *cmd, char **av, char **env, pid_t pid)
     {
       if (wait(&status) == 84)
 	return (84);
-      signal_process(status);
+      signal_process(status, st_rt);
     }
   return (0);
 }

@@ -5,7 +5,7 @@
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
 ## Started on  Wed Apr  5 01:04:14 2017 Nicolas
-## Last update Fri Apr  7 06:15:35 2017 Nicolas
+## Last update Sun Apr  9 02:53:45 2017 Nicolas
 ##
 
 NAME	= mysh
@@ -26,6 +26,7 @@ SRCS	= ./src/builtin/builtin.c		\
 	  ./src/execve/my_exec_brut.c		\
 	  ./src/execve/wait_pid_exec.c		\
 	  ./src/fct/find_pos_equal.c		\
+	  ./src/fct/copy_tab.c			\
 	  ./src/fct/my_strcmp.c			\
 	  ./src/fct/my_putstr.c			\
 	  ./src/fct/my_putchar.c		\
@@ -41,6 +42,7 @@ SRCS	= ./src/builtin/builtin.c		\
 	  ./src/fct/my_str_to_wordtab.c		\
 	  ./src/fct/my_strcat.c			\
 	  ./src/fct/my_strcpy.c			\
+	  ./src/fct/my_str_isalpha.c		\
 	  ./src/fct/my_strdup.c			\
 	  ./src/fct/my_strlen.c			\
 	  ./src/fct/my_strncmp.c		\
@@ -48,6 +50,7 @@ SRCS	= ./src/builtin/builtin.c		\
 	  ./src/fct/show_tab.c			\
 	  ./src/signal/get_sigint.c		\
 	  ./src/signal/signal_process.c		\
+	  ./src/my_exit.c			\
 	  ./src/main.c
 
 OBJS	= $(SRCS:.c=.o)
