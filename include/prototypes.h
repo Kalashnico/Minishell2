@@ -5,7 +5,7 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Mon Jan  9 15:46:26 2017 Nicolas Guerin
-** Last update Sun Apr  9 01:09:56 2017 Nicolas
+** Last update Sun Apr  9 02:28:31 2017 Nicolas
 */
 
 #ifndef PROTOTYPES_H_
@@ -38,6 +38,7 @@ void	my_putstr(char *str, int fd);
 void	free_tab(char **av);
 void	my_memset(void *s, int f, int n);
 void	my_strcat(char *dest, char *src);
+int	my_str_isalpha(char *str);
 int	find_pos_equal(char *path);
 int	count_pipe(char *buff);
 int	count_colum(char *buff);
@@ -81,7 +82,7 @@ char	**env_tab(char **env);
 char	**builtin_env(char *buff, char **env, t_point *st_rt);
 char	**overwrite_setenv(char **env, char **tab, int i);
 char	**my_unsetenv(char **env, char *buff);
-char	**my_setenv(char **env, char *buff);
+char	**my_setenv(char **env, char *buff, int i);
 char	**my_cd(char **env, char **tab, char *cmd, t_point *st_rt);
 char	**change_pwd(char **env, char *cmd);
 
