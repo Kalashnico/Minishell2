@@ -5,8 +5,17 @@
 ## Login   <nicolas.guerin@epitech.eu>
 ## 
 ## Started on  Wed Apr  5 01:04:14 2017 Nicolas
-## Last update Sun Apr  9 02:53:45 2017 Nicolas
+## Last update Tue Apr 25 14:58:41 2017 Nicolas
 ##
+
+
+GREEN   = \033[1;32m
+
+RED     = \033[1;31m
+
+YELLOW  = \033[1;33m
+
+WHITE   = \033[0;m
 
 NAME	= mysh
 
@@ -61,7 +70,13 @@ CFLAGS += -W -Wall -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	 $(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+	 @$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+	 @printf "\n[$(GREEN)OK$(WHITE)] Binary : $(NAME)\n"
+	 @echo "-------------------\n"
+
+%.o :    %.c
+	 @$(CC) $(CFLAGS) -c -o $@ $<
+	 @printf "[$(GREEN)OK$(WHITE)] $<\n"
 
 clean:
 	$(RM) $(OBJS)

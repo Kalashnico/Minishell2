@@ -5,10 +5,10 @@
 ** Login   <guerin_n@epitech.net>
 ** 
 ** Started on  Thu Jan 26 17:17:46 2017 Nicolas Guerin
-** Last update Sat Apr  8 21:46:50 2017 Nicolas
+** Last update Sun Apr 23 16:22:06 2017 Nicolas
 */
 
-#include "prototypes.h"
+#include <stdlib.h>
 
 static int	my_strlen_spe(char *str, char c)
 {

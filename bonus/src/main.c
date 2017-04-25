@@ -5,7 +5,7 @@
 ** Login   <nicolas.guerin@epitech.eu>
 ** 
 ** Started on  Sun Apr  2 06:15:14 2017 Nicolas
-** Last update Sun Apr  9 15:39:16 2017 Nicolas
+** Last update Fri Apr 14 00:20:39 2017 Nicolas
 */
 
 #include "prototypes.h"
@@ -41,6 +41,7 @@ int	init_shell(int ac)
 {
   if (ac != 1)
     return (84);
+  system("clear");
   my_putstr("----------------------------------------------\n", 0, GREEN);
   my_putstr("|                                            |\n", 0, GREEN);
   my_putstr("| Welcome to your shell Kalashnico.          |\n", 0, GREEN);
