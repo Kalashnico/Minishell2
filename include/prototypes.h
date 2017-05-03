@@ -22,15 +22,6 @@ typedef struct	s_point
   int	ret;
 }		t_point;
 
-/* --- SHELL --- */
-
-void	prompt();
-int	init_shell(int ac);
-char	**shell_loop(char **env, char **new_tab, t_point *st_rt);
-char	**mysh(char **env, char *buff, char **new_av, t_point *st_rt);
-
-/* --- END_SHELL --- */
-
 /* ---  FCT --- */
 
 void	my_putchar(char c, int fd);
