@@ -10,12 +10,12 @@
 
 #include "prototypes.h"
 
-void	prompt()
+static void	prompt()
 {
   my_putstr("$>", 0);
 }
 
-char	**mysh(char **env, char *buff, char **new_av, t_point *st_rt)
+static char	**mysh(char **env, char *buff, char **new_av, t_point *st_rt)
 {
   if (check_if_built_exist(buff) == 0)
     {
@@ -37,7 +37,7 @@ char	**mysh(char **env, char *buff, char **new_av, t_point *st_rt)
   return (env);
 }
 
-int	init_shell(int ac)
+static int	init_shell(int ac)
 {
   if (ac != 1)
     return (84);
@@ -47,7 +47,7 @@ int	init_shell(int ac)
   return (0);
 }
 
-char	**shell_loop(char **env, char **new_tab, t_point *st_rt)
+static char	**shell_loop(char **env, char **new_tab, t_point *st_rt)
 {
   char	**new_av;
   int	i;
